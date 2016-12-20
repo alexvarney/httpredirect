@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <Title>HTTP Redirection Engine</Title>
+        
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+            }
+            input{
+                width:100%;
+                display: inline;
+            }
+            h1{
+                margin-bottom: 5px;
+                color: #2d5087;
+            }
+            h2{
+                margin-top:0px;
+                margin-bottom: 50px;
+                color: #2d5087;
+            }
+            .flexbox_align{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                min-width: 500px;
+            }
+            .alignment_item{
+                max-width: 50%;
+            }
+            .response_value{
+                color: #2d5087;
+                font-size:30px;
+                font-weight: bold;
+            }
+        </style>
+        
+        <script>
+            function handleClick(caller) {
+                if(caller.checked){
+                    document.getElementById('redirect_key').style.display = "inline";
+                }else{
+                    document.getElementById('redirect_key').style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="flexbox_align">
+            <h1 class="alignment_item">HTTPRedirect</h1>
+            <h2 class="alignment_item">{{hostname}}</h2>
+            <h3 class="alignment_item">Your link is: </h3>
+            <a class="alignment_item response_value" href="{{html_url}}">{{display_url}}</a>
+            
+        </div>
+    </body>
+    
+</html>

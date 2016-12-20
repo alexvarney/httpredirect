@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <Title>HTTP Redirection Engine</Title>
+        
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+            }
+            input{
+                width:100%;
+                display: inline;
+            }
+            h1{
+                margin-bottom: 5px;
+                color: #2d5087;
+            }
+            h2{
+                margin-top:0px;
+                margin-bottom: 50px;
+                color: #2d5087;
+            }
+            input[type=text]{
+                border:2px solid #2d5087;
+                border-radius: 5px;
+                font-size:30px;
+                height: 50px;
+                padding:10px;
+                margin-bottom: 10px;
+            }
+            input[type=submit]{
+                background-color: #2d5087;
+                color: #fff;
+                height:50px;
+                border: none;
+                border-radius: 6px;
+                font-size:25px;
+            }
+            .flexbox_align{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                min-width: 500px;
+            }
+            .alignment_item{
+                max-width: 50%;
+            }
+            #redirect_key{
+                display: none;
+            }
+            #checkbox_container{
+                display: inline-flex;
+                width: 100%;
+                height:45px;
+            }
+            
+            #checkbox_random_key{
+                -webkit-appearance:none;
+                width:30px;
+                height:30px;
+                background:white;
+                border-radius:5px;
+                border:2px solid #2d5087;
+                margin-left:0px;
+                margin-right:10px;
+                margin-bottom: 0px;
+                margin-top:0px;
+            }
+            #checkbox_random_key:checked{
+                background: #2d5087;
+            }
+            #checkbox_text{
+                position: relative;
+                top: -12px;
+                font-size:20px;
+            }
+        </style>
+        
+        <script>
+            function handleClick(caller) {
+                if(caller.checked){
+                    document.getElementById('redirect_key').style.display = "inline";
+                }else{
+                    document.getElementById('redirect_key').style.display = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="flexbox_align">
+            <h1 class="alignment_item">HTTPRedirect</h1>
+            <h2>{{hostname}}</h2>
+            <div class="alignment_item">
+                <form id="inputform" action="/" method="POST">
+                    <input type="text" name="URL" placeholder="http://example.com">
+                    <div id="checkbox_container">
+                        <input id="checkbox_random_key" type="checkbox" name="generate-random-key" onClick="handleClick(this);">
+                        <p id="checkbox_text">Custom URL?</p>
+                    </div>
+                    <input type="text" id="redirect_key" name="redirect-value" placeholder="example-url">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </body>
+    
+</html>

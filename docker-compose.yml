@@ -1,0 +1,6 @@
+version: '2'
+services:
+  flask-redirect:
+    image: "alexvarney/httpredirect:0.2"
+  redis:
+    image: "redis:alpine"
