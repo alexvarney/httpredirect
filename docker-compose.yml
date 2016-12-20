@@ -1,6 +1,9 @@
 version: '2'
 services:
   flask-redirect:
-    image: "alexvarney/httpredirect:0.2"
+    image: "alexvarney/httpredirect:latest"
+    environment:
+      - VIRTUAL_HOST=redirect.dev.varney.me
+      - PORT=8000
   redis:
     image: "redis:alpine"
